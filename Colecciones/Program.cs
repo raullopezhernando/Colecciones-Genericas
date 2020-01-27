@@ -55,6 +55,8 @@ namespace Colecciones
 
             ////INICIO DE LinkedinList <T>
 
+            // FIFO (First In First Out - El primer nodo que entra es el primer nodo que sale)
+
             //// LinkedinList no soporta el acceso a la misma como si fuera un arreglo
 
             //LinkedList<int> numeros = new LinkedList<int>();
@@ -113,51 +115,142 @@ namespace Colecciones
 
 
 
-            // INICIO DE COLECCION QUEUE 
+            //// INICIO DE COLECCION QUEUE 
 
-            Queue<int> numeros = new Queue<int>();
+            //Queue<int> numeros = new Queue<int>();
 
-            numeros.Enqueue(3);
-            
-            // Encolando o añadiendo elementos
+            //numeros.Enqueue(3);
 
-            for (int i = 1; i <= 10; i++) 
-            {
+            //// Encolando o añadiendo elementos
 
-                numeros.Enqueue(i);
-            
-            }
-
-            // Contendra el primer elemento que saldria de nuestra 
-            // estructura de cola. Es un metodo que no lleva argumentos
-
-
-            var elemento = numeros.Dequeue();
-
-            while (numeros.Count > 0) 
-            {
-                elemento = numeros.Dequeue();
-                Console.WriteLine(elemento);
-            }
-
-
-
-            //foreach (var numero in numeros) 
+            //for (int i = 1; i <= 10; i++) 
             //{
 
+            //    numeros.Enqueue(i);
 
-            //    Console.WriteLine(numero);
+            //}
+
+            //// Contendra el primer elemento que saldria de nuestra 
+            //// estructura de cola. Es un metodo que no lleva argumentos
+
+
+            //var elemento = numeros.Dequeue();
+
+            //while (numeros.Count > 0) 
+            //{
+            //    elemento = numeros.Dequeue();
+            //    Console.WriteLine(elemento);
             //}
 
 
 
-         
-            var elemento2 = numeros.Dequeue();
+            ////foreach (var numero in numeros) 
+            ////{
+
+
+            ////    Console.WriteLine(numero);
+            ////}
 
 
 
+
+            //var elemento2 = numeros.Dequeue();
+
+
+
+
+            //Console.ReadLine();
+
+
+
+            // INCIO DE STACK O PILA
+
+            //Estructura de LIFO (Last In First Out) - El ultimo elemento que entra es el primero que sale
+
+            //Stack<int> numeros = new Stack <int>();
+
+            //// Para insertar un elemento se utiliza el metodo Push
+
+            //for (int i = 1; i <= 10, i++) 
+            //{
+            //    numeros.Push(i);
+            //}
+
+            //// Sacar uno de los elementos de esa pila
+
+            //var elemento = numeros.Pop();
+
+
+            //// Se insertan de arriba abajo es decir el ultimo numero sera el 1 y el primero el 10. Se imprimer del mayor al menor y en las colas del menor al mayor
+            //// Pila ----> 10 9 8 7 6 5 4 3 2 1 
+            //// Cola ----> 1 2 3 4 5 6 7 8 9 10
+
+            //while (numeros.Count() >0) 
+            //{
+            //    elemento = numeros.Pop();
+            //    Console.WriteLine(elemento);
+            //}
+
+            //// FINAL DE STACK O PILA
+
+
+
+            // DICCIONARIO GENERICO    DICTIONARY <T>
+
+
+            //  IMPORTANTE -------------Un arreglo o una lista no pueden contener un indice diferente de un numero entero. Es decir , no podrias meter un caracter, una cadena, un double ...
+            
+
+            int[] numeros = new int[3] { 1, 2, 3 };
+
+            numeros[0] = 20;
 
             Console.ReadLine();
+
+            Dictionary<int, int> diccionario = new Dictionary<int, int>();
+            Dictionary<string, string> frases = new Dictionary<string, string>();
+
+            frases.Add("CP", "Alguna frase poetica");
+            frases.Add("HP", " Curso de C#");
+
+            foreach (var elemento in frases) 
+            {
+                string autor = elemento.Key;
+                string frase = elemento.Value;
+
+                Console.WriteLine($"{autor},{frase}");
+            }
+
+            // A traves de la llave modificamos su value
+
+            frases["HP"] = "Cursos de Xamarin";
+
+            foreach (var elemento in frases)
+            {
+                string autor = elemento.Key;
+                string frase = elemento.Value;
+
+                Console.WriteLine($"{autor},{frase}");
+            }
+
+
+            for (int i = 1; i < 10; i++) 
+            {
+                diccionario.Add(i, i);
+            
+            }
+
+
+
+
+
+
+
+
+            // FINAL DE DICCIONARIO GENERICO
+
+
+
 
 
         }
